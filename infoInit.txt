@@ -1,0 +1,19 @@
+-- This project uses the following licenses:
+-- MIT License
+-- Copyright (c) 2020 Ricardo Mendoza 
+-- Montréal Québec Canada
+
+Description - In this project we will develop a program to inverse a chaine in C # .NET.
+https://github.com/RicardoAMendoza/prjCon_Cs_RemplacerdesCaracteres_Rm.git
+
+-- TITLE
+1. create repository in GitHub : prjCon_Cs_RemplacerdesCaracteres_Rm
+2. create file : prjCon_Cs_RemplacerdesCaracteres_Rm
+3. open git Bash
+4. create README.md inside prjCon_Cs_RemplacerdesCaracteres_Rm
+   git init
+5. git add README.md
+6. git add .
+7. git commit -m "My first commit"
+8. git remote add origin https://github.com/RicardoAMendoza/prjCon_Cs_RemplacerdesCaracteres_Rm.git
+9. git push -u origin master
