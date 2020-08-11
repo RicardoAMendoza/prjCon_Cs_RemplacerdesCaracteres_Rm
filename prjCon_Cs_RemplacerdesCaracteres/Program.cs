@@ -17,6 +17,7 @@ namespace prjCon_Cs_RemplacerdesCaracteres
         *  Institut Teccart
         *  www.teccart.qc.ca
         *  Hiver 2019
+        *  Été 2020
         */
         static void Main(string[] args)
         {
@@ -26,6 +27,51 @@ namespace prjCon_Cs_RemplacerdesCaracteres
             Console.WriteLine("\nRemplacer A->X et B->Y", Console.ForegroundColor=ConsoleColor.Gray);
             Console.WriteLine("\n\nChaine : {0}", xchaine,Console.ForegroundColor=ConsoleColor.Yellow);
             Console.WriteLine("\nRemplace : {0}", fncRemplacerChar(xchaine),Console.ForegroundColor=ConsoleColor.Cyan);
+            Console.ReadKey();
+
+            try
+            {
+                // variable
+                char end;
+                char fin;
+                string source;
+                string chaine;
+                string replace;
+
+                do
+                {
+                    Console.WriteLine("\n\nREMPLACER DES CARATERES", Console.ForegroundColor = ConsoleColor.Green);
+                    Console.WriteLine("\n WRITE THE SOURCE -> \n ", Console.ForegroundColor = ConsoleColor.Green);
+                    source = Convert.ToString(Console.ReadLine().ToUpper());
+                    //do
+                    //{
+                        Console.WriteLine("\n WRITE A CHINE -> \n ", Console.ForegroundColor = ConsoleColor.Green);
+                        chaine = Convert.ToString(Console.ReadLine().ToUpper());
+                        Console.WriteLine("\n WRITE A REPLACE -> \n ", Console.ForegroundColor = ConsoleColor.Green);
+                        replace = Convert.ToString(Console.ReadLine().ToUpper());
+
+                        Console.WriteLine("\n\n Continue [Y/N]");
+                        fin = char.Parse(Console.ReadLine().ToUpper());
+                    //}
+                    //while (fin == 'Y');
+
+                    Console.WriteLine("\n\nChaine : {0}", chaine, Console.ForegroundColor = ConsoleColor.Yellow);
+                    Console.WriteLine("\nRemplace : {0}", fncRemplacerLoop(source, chaine, replace), Console.ForegroundColor = ConsoleColor.Cyan);
+
+                    Console.WriteLine("\n\n Continue [Y/N]");
+                    end = char.Parse(Console.ReadLine().ToUpper());
+                }
+                while (end == 'Y');
+
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("\n\n error in the program ->" + e.Message, Console.ForegroundColor=ConsoleColor.Red);
+            }
+            finally
+            {
+                Console.WriteLine("\n\n block finally -> ", Console.ForegroundColor=ConsoleColor.Gray);
+            }
             Console.ReadKey();
         }
 
@@ -42,6 +88,12 @@ namespace prjCon_Cs_RemplacerdesCaracteres
             source = Regex.Replace(source, "A", "X", RegexOptions.IgnoreCase);
             source = Regex.Replace(source, "B", "Y", RegexOptions.IgnoreCase);
             return source;
+        }
+
+        private static string fncRemplacerLoop(string source, string chaine, string replace)
+        {
+            source = Regex.Replace(source, chaine, replace, RegexOptions.IgnoreCase );
+            return source; 
         }
     }
 }
